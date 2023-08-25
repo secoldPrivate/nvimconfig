@@ -2,6 +2,8 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 local wk = require("which-key")
+local hop = require('hop')
+local directions = require('hop.hint').HintDirection
 
 wk.register({
   h = {
@@ -38,3 +40,25 @@ vim.api.nvim_set_keymap(
   ":NvimTreeFocus<CR>",
   { noremap = true }
 )
+
+
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<space>fx`",
+  ":NvimTreeFocus<CR>",
+  { noremap = true }
+)
+
+
+
+vim.keymap.set('n', '<space>v',   ":HopWord<CR>", {remap=false})
+-- vim.keymap.set('', 'F', function()
+--   hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true })
+-- end, {remap=true})
+-- vim.keymap.set('', 't', function()
+--   hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })
+-- end, {remap=true})
+-- vim.keymap.set('', 'T', function()
+--   hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })
+-- end, {remap=true})
