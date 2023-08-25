@@ -50,15 +50,15 @@ vim.api.nvim_set_keymap(
   { noremap = true }
 )
 
+local betterTerm = require('betterTerm')
 
 
 vim.keymap.set('n', '<space>v',   ":HopWord<CR>", {remap=false})
--- vim.keymap.set('', 'F', function()
---   hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true })
--- end, {remap=true})
--- vim.keymap.set('', 't', function()
---   hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })
--- end, {remap=true})
--- vim.keymap.set('', 'T', function()
---   hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })
--- end, {remap=true})
+
+vim.keymap.set('n', "<space>t", betterTerm.open, {remap=false, desc = "Open terminal"})
+-- Select term focus
+
+-- copy path of buffer
+vim.api.nvim_set_keymap('n', '<space>fp', ':let @+=expand("%:p")<CR>:echo "File path copied to clipboard"<CR>', { noremap = true, silent = false })
+
+
