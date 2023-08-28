@@ -52,7 +52,7 @@ vim.api.nvim_set_keymap(
 
 local betterTerm = require('betterTerm')
 
-
+-- hop to
 vim.keymap.set('n', '<space>v',   ":HopWord<CR>", {remap=false})
 
 vim.keymap.set('n', "<space>t", betterTerm.open, {remap=false, desc = "Open terminal"})
